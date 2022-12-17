@@ -1,6 +1,8 @@
+import Banner from "../src/elements/Banner";
+
 const Index = async () => {
   return <>
-    <h1>Hola</h1>    
+     <Banner backgroundImage="/img/placeholders/bannerDesktop.png" title="Welcome a UnBit" subtitle="Un bit a la vez" />
   </>
 }
 

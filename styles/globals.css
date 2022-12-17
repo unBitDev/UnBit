@@ -7,6 +7,9 @@
   --color-error: #FF5151;
   --color-primary: #451659;
   --color-secundary: #8C0375;
+
+  --size-title-banner: 4rem;
+  --size-subtitle-banner: 2.25rem;
 }
 
 html,
