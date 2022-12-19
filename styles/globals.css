@@ -1,40 +1,44 @@
-:root {
-  --color-white: #ffffff;
-  --color-black: #1C1C1C;
-  --color-hover-black: #2E2E2E;
-  --color-success: #50D15D;
-  --color-waring: #F5E06F;
-  --color-error: #FF5151;
-  --color-primary: #451659;
-  --color-secundary: #8C0375;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --size-title-banner: 4rem;
-  --size-subtitle-banner: 2.25rem;
-}
+/* :root { */
+/*   --color-white: #ffffff; */
+/*   --color-black: #1C1C1C; */
+/*   --color-hover-black: #2E2E2E; */
+/*   --color-success: #50D15D; */
+/*   --color-waring: #F5E06F; */
+/*   --color-error: #FF5151; */
+/*   --color-primary: #451659; */
+/*   --color-secundary: #8C0375; */
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+/*   --size-title-banner: 4rem; */
+/*   --size-subtitle-banner: 2.25rem; */
+/* } */
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* html, */
+/* body { */
+/*   padding: 0; */
+/*   margin: 0; */
+/*   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, */
+/*     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+/* } */
 
-* {
-  box-sizing: border-box;
-}
+/* a { */
+/*   color: inherit; */
+/*   text-decoration: none; */
+/* } */
 
-@media (prefers-color-scheme: light) { 
-  html {
-    color-scheme: light;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+/* * { */
+/*   box-sizing: border-box; */
+/* } */
+
+/* @media (prefers-color-scheme: light) {  */
+/*   html { */
+/*     color-scheme: light; */
+/*   } */
+/*   body { */
+/*     color: white; */
+/*     background: black; */
+/*   } */
+/* } */
