@@ -5,6 +5,8 @@ import styles from '../styles/pages/home.module.css'
 
 const Index = async () => {
   return <>
+    <span>hola</span>
+     {/*
      <Banner backgroundImage="/img/placeholders/bannerDesktop.png" title="Bienvenidos a UnBit" subtitle="Un bit a la vez" />
      <div className={styles.container}>
         <div className={styles.containerContent}>
@@ -37,6 +39,7 @@ const Index = async () => {
           </section>
         </div>
      </div>
+     */}
   </>
 }
 
