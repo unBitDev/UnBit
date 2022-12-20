@@ -7,9 +7,10 @@
 }
 
 .container {
-  padding-top: 2rem;
-  width: 37.5rem;
-  height: 100%;
+  display: grid;
+  place-items: center;
+  width: 80%;
+  color: #FFFFFF;
 }
 
 .itemsPolices {

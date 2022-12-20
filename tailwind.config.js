@@ -10,7 +10,24 @@ module.exports = {
       'warning': '#F5E06F',
       'error': '#FF5151',
       'primary': '#8C0375',
-      'secundary': '#451659'
+      'secundary': '#451659',
+      'pink': {
+        '400': '#F472B6',
+        '500': '#EC4899'
+      },
+      'red': {
+        '400': '#F87171',
+        '500': '#EF4444'
+      },
+      'orange': {
+        '400': '#FB923C'
+      },
+      'yellow': {
+        '500': '#EAB308'
+      }
+    },
+    container: {
+      center: true
     },
     extend: {},
   },
