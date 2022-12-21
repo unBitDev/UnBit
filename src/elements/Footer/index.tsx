@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Instagram, Youtube } from 'react-feather';
 
 const Footer = () => {
-  return <footer className="bg-black p-4 sm:p-6">
+  return <footer className="bottom-0 inset-x-0 bg-black p-4 sm:p-6">
     <div className="text-white grid place-items-center">
       <ul className="grid text-center justify-self-center grid-rows-1 grid-cols-4 gap-8 pt-2 pb-6 sm:gap-6">
         <li><Link className="text-white" href='/legal-warning'>Legal warning</Link></li>
