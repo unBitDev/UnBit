@@ -4,7 +4,7 @@ import Banner from "../src/elements/Banner";
 import styles from '../styles/pages/home.module.css'
 
 const Index = async () => {
-  return <div className="mb-24 max-md:mb-2 bg-red-500">
+  return <div className="mb-24 max-md:mb-2">
     <Banner backgroundImage="/img/placeholders/bannerDesktop.png" title="Bienvenidos a UnBit" subtitle="Un bit a la vez" /> 
      <div className="grid justify-items-center w-full">
         <div className="w-2/3 max-md:w-4/5">
