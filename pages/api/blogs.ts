@@ -1,13 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { ContentfulBlog, ContentfulBlogResponse, ResponseBlog } from "../../src/types/api/blogs";
+import { ContentfulBlogResponse, ContentfulBlogs, ResponseBlogs } from "../../src/types/api/blogs";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') res.status(500).send({msg: "Method request invalid!"});
   
-  const contentfulBlogsArray: ContentfulBlog[] = [];
-  const blogsResponse: ResponseBlog[] = [];
+  const contentfulBlogsArray: ContentfulBlogs[] = [];
+  const blogsResponse: ResponseBlogs[] = [];
   
-  let skip: number = 0;
   const limit: number = req.query?.limit ? parseInt(req.query?.limit.toString()) : 200;
 
   const authentication: string = `Bearer ${process.env.CONTENTFUL_TOKEN}`
@@ -20,18 +19,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     },
     body: JSON.stringify({
       query: `query {
-          blogsCollection(limit: ${limit}, skip: ${skip}, where: {
-              published:true
-            }) {
+          blogsCollection(limit: ${limit}, where: { published:true }) {
             items {
               title,
-              subtitle,
-              blogBanner { url },
-              blogContent {
-                  json
-              },
+              shortDescription,
+              coverImage { url },
               publicationDate,
-              codeAuthor
+              sys { id }
             },
             limit
             skip
@@ -42,19 +36,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }); 
 
   const blogsResponseContentful: ContentfulBlogResponse = await response.json();
-  Array.prototype.push.apply(contentfulBlogsArray, blogsResponseContentful.data.blogsCollection.items);
-  skip = skip + limit;
+  Array.prototype.push.apply(contentfulBlogsArray, blogsResponseContentful.data.blogsCollection.items); 
 
-  contentfulBlogsArray.forEach((contentfulBlog: ContentfulBlog) => {
+  contentfulBlogsArray.forEach((contentfulBlog: ContentfulBlogs) => {
     blogsResponse.push({
       title: contentfulBlog.title,
       shortDescription: contentfulBlog.shortDescription,
-      blogContent: contentfulBlog.blogContent.json,
-      blogBanner: contentfulBlog.blogBanner.url,
+      coverImage: contentfulBlog.coverImage.url,
       publised: contentfulBlog.published,
       publicationDate: contentfulBlog.publicationDate,
-      codeAuthor: contentfulBlog.codeAuthor,
-      subtitle: contentfulBlog.subtitle
+      id: contentfulBlog.sys.id
     })
   })
 

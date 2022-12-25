@@ -1,42 +1,30 @@
-export type ResponseBlog = {
+export type ResponseBlogs = {
   title: string;
   shortDescription: string;
-  blogContent: ContentBlogContent;
-  blogBanner: string;
+  coverImage: string;
   publised: boolean;
   publicationDate: string;
-  codeAuthor: string;
-  subtitle?: string;
+  id: string;
 }
 
-export type ContentfulBlog = {
+export type ContentfulBlogs = {
   title: string;
-  shortDescription: string;
-  blogContent: {
-    json: ContentBlogContent;
-  }
-  blogBanner: ContentfulAsset;
+  shortDescription: string; 
+  coverImage: ContentfulAsset;
   published: boolean;
   publicationDate: string;
-  codeAuthor: string;
-  subtitle?:string;
+  sys: ContentfulSys;
 }
 
 export type ContentfulBlogResponse = {
   data: {
     blogsCollection: {
-      items: ContentfulBlog[],
+      items: ContentfulBlogs[],
       limit: number;
       skip: number;
       total: number;
     }
   }
-}
-
-type ContentBlogContent = {
-  data: any;
-  content: ContentBlogContent[],
-  nodeType: string;
 }
 
 type ContentfulAsset = {
@@ -46,4 +34,13 @@ type ContentfulAsset = {
 	url: string;
 	width: string;
 	height: string;
+}
+
+type ContentfulSys = {
+  id: string;
+  spaceId: string;
+  enviromentId: string;
+  publishedAt: string;
+  firstPublishedAt: string;
+  publishedVersion: number;
 }
