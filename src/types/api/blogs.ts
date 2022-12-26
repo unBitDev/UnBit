@@ -1,3 +1,5 @@
+import { ContentfulAsset, ContentfulSys } from "../shared/contentful";
+
 export type ResponseBlogs = {
   title: string;
   shortDescription: string;
@@ -16,7 +18,7 @@ export type ContentfulBlogs = {
   sys: ContentfulSys;
 }
 
-export type ContentfulBlogResponse = {
+export type ContentfulBlogsResponse = {
   data: {
     blogsCollection: {
       items: ContentfulBlogs[],
@@ -25,22 +27,4 @@ export type ContentfulBlogResponse = {
       total: number;
     }
   }
-}
-
-type ContentfulAsset = {
-	title: string;
-	description: string;
-	filename: string;
-	url: string;
-	width: string;
-	height: string;
-}
-
-type ContentfulSys = {
-  id: string;
-  spaceId: string;
-  enviromentId: string;
-  publishedAt: string;
-  firstPublishedAt: string;
-  publishedVersion: number;
 }

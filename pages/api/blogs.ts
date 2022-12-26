@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { ContentfulBlogResponse, ContentfulBlogs, ResponseBlogs } from "../../src/types/api/blogs";
+import { ContentfulBlogsResponse, ContentfulBlogs, ResponseBlogs } from "../../src/types/api/blogs";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') res.status(500).send({msg: "Method request invalid!"});
@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
   }); 
 
-  const blogsResponseContentful: ContentfulBlogResponse = await response.json();
+  const blogsResponseContentful: ContentfulBlogsResponse = await response.json();
   Array.prototype.push.apply(contentfulBlogsArray, blogsResponseContentful.data.blogsCollection.items); 
 
   contentfulBlogsArray.forEach((contentfulBlog: ContentfulBlogs) => {
