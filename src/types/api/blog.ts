@@ -1,11 +1,12 @@
 import { ContentfulAsset, ContentfulRichtext } from "../shared/contentful";
+import { ResponseAuthor } from "./author";
 
 export type ResponseBlog = {
   title: string;
   blogBanner: string;
   content: ContentfulRichtext;
   publicationDate: string;
-  author: string;
+  author: ResponseAuthor;
   subtitle?: string;
 }
 
