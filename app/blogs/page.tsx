@@ -4,7 +4,7 @@ import { ResponseBlogs } from '../../src/types/api/blogs'
 import { formatDate } from '../../src/utils/formatDate';
 
 async function getInfoBlogs() {
-  const res = await fetch('http://localhost:3000/api/blogs');
+  const res = await fetch(`${process.env.HOST}/api/blogs`);
   if(!res.ok) throw new Error('Failed to fetch data blog');
   return res.json();
 }
