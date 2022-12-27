@@ -38,7 +38,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const blogsResponseContentful: ContentfulBlogsResponse = await response.json();
   Array.prototype.push.apply(contentfulBlogsArray, blogsResponseContentful.data.blogsCollection.items); 
 
+  res.setHeader('Cache-Control', `public, s-maxage=300, max-age=300, stale-while-revalidate=299`);
+
+  const dateNow = new Date();
   contentfulBlogsArray.forEach((contentfulBlog: ContentfulBlogs) => {
+    const dateBlog = new Date(contentfulBlog.publicationDate);
+    if(dateBlog > dateNow) return;
+
     blogsResponse.push({
       title: contentfulBlog.title,
       shortDescription: contentfulBlog.shortDescription,

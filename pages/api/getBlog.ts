@@ -57,6 +57,8 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     avatar: authorResponseContentul.data.authorCollection.items[0].avatar.url
   }
 
+  res.setHeader('Cache-Control', `public, s-maxage=300, max-age=300, stale-while-revalidate=299`);
+
   const blog: ResponseBlog = {
     title: blogResponseContentful.data.blogs.title,
     blogBanner: blogResponseContentful.data.blogs.blogBanner.url,
