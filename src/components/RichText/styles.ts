@@ -1,3 +1,3 @@
 export const styles = {
-  imageRichText: ""
+  imageRichText: "w-full"
 }
