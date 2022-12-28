@@ -1,3 +1,3 @@
 export const styles = {
-  imageRichText: "w-full"
+  imageRichText: "max-md:w-fit"
 }
