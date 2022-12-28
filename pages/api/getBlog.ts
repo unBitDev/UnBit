@@ -22,8 +22,33 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
             title,
             subtitle,
             blogBanner { url },
-            blogContent { json },
+            blogContent { 
+              json,
+              links {
+                assets {
+                  block {
+                    sys {
+                      id
+                    }
+                    url
+                    width
+                    height
+                    description
+                  }
+                  hyperlink {
+                  sys{
+                    id
+                  }
+                  width
+                  height
+                  description
+                  url
+                  }
+                }
+              }
+            },
             publicationDate,
+            styles,
             codeAuthor
           }
         }`
@@ -57,7 +82,14 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     avatar: authorResponseContentul.data.authorCollection.items[0].avatar.url
   }
 
-  res.setHeader('Cache-Control', `public, s-maxage=300, max-age=300, stale-while-revalidate=299`);
+  res.setHeader('Cache-Control', `public, s-maxage=300, max-age=300, stale-while-revalidate=299`); 
+
+  const stylesObject: any = blogResponseContentful.data.blogs.styles
+  let styles: string = "";
+  
+  for(let key in stylesObject) {
+    styles = `${styles} ${stylesObject[key]}`
+  }
 
   const blog: ResponseBlog = {
     title: blogResponseContentful.data.blogs.title,
@@ -65,6 +97,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     content: blogResponseContentful.data.blogs.blogContent,
     publicationDate: blogResponseContentful.data.blogs.publicationDate,
     author,
+    styles,
     subtitle: blogResponseContentful.data.blogs.subtitle
   }
 

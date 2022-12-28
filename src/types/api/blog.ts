@@ -7,6 +7,7 @@ export type ResponseBlog = {
   content: ContentfulRichtext;
   publicationDate: string;
   author: ResponseAuthor;
+  styles?: string;
   subtitle?: string;
 }
 
@@ -16,8 +17,11 @@ export type ContentfulBlogResponse = {
       title: string;
       blogBanner: ContentfulAsset;
       blogContent: ContentfulRichtext;
-      publicationDate: string;
+      publicationDate: string; 
       codeAuthor: string;
+      styles?: {
+        textColor?: string;
+      };
       subtitle?: string;
     }
   }
