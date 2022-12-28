@@ -7,7 +7,7 @@ type ContainerProps = {
 const Container = ({children}: ContainerProps) => {
   return ( 
     <div className="grid justify-items-center w-full my-5">
-      <div className="w-2/3 max-md:w-10/12">
+      <div className="w-2/3 max-md:w-10/12 max-lg:w-4/5">
         {children}
       </div>
     </div>

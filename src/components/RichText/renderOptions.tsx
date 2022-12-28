@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import { BLOCKS } from '@contentful/rich-text-types'
+import Link from 'next/link';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { AssetMap, formatAssets } from './formatAsset';
 import { styles } from './styles';
+import Code from '../Code';
 
 export const renderOptions = (links: any) => {
   const assetsMap: Map<string, AssetMap> = formatAssets(links.assets.block); 
@@ -37,6 +39,19 @@ export const renderOptions = (links: any) => {
           />
         );
       },
-    },
+      [INLINES.HYPERLINK]: (node: any, _: any) => {
+        return <Link href={node.data.uri}>{node.content[0].value}</Link>
+      },
+      [BLOCKS.PARAGRAPH]: (node: any, _: any) => {
+        let renderNode = null;
+
+        node.content.forEach((c: any) => {
+          if(c.marks?.length > 0 && c.marks[0].type === 'code') renderNode = <Code code={node.content[0].value}/>;
+          else renderNode = <p>{node.content[0].value}</p>
+        })
+
+        return renderNode;
+      }
+    }
   }
 };

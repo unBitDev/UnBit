@@ -586,6 +586,10 @@ video {
   bottom: 0px;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -652,6 +656,10 @@ video {
   height: 18rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-\[15rem\] {
   height: 15rem;
 }
@@ -662,6 +670,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-4 {
+  width: 1rem;
 }
 
 .w-2\/3 {
@@ -728,6 +740,10 @@ video {
   gap: 1.75rem;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .self-center {
   align-self: center;
 }
@@ -742,6 +758,10 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-full {
@@ -764,6 +784,26 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-terminal {
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 39 52 / var(--tw-bg-opacity));
+}
+
+.bg-error {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 81 81 / var(--tw-bg-opacity));
+}
+
+.bg-warning {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 224 111 / var(--tw-bg-opacity));
+}
+
+.bg-success {
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 209 93 / var(--tw-bg-opacity));
 }
 
 .bg-black {
@@ -1043,6 +1083,12 @@ video {
   .dark\:hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+@media not all and (min-width: 1024px) {
+  .max-lg\:w-4\/5 {
+    width: 80%;
   }
 }
 

@@ -11,6 +11,7 @@ module.exports = {
       'error': '#FF5151',
       'primary': '#8C0375',
       'secundary': '#451659',
+      'terminal': '#292734',
       'pink': {
         '400': '#F472B6',
         '500': '#EC4899'
