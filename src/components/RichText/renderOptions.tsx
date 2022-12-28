@@ -32,8 +32,8 @@ export const renderOptions = (links: any) => {
           <Image
             className={styles.imageRichText}
             src={asset.url}
-            height={parseInt(asset.height)}
-            width={parseInt(asset.width)}
+            height={500}
+            width={500}
             alt={asset.description}
             quality={75}
           />
