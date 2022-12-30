@@ -3,8 +3,8 @@ import { ContentfulAssets } from "../../types/shared/contentful";
 export type AssetMap = {
   url: string;
   description: string;
-  width: string;
-  height: string;
+  width: number;
+  height: number;
 }
 
 export const formatAssets = (assetsBlock: ContentfulAssets[]): Map<string, AssetMap> => {
@@ -14,8 +14,8 @@ export const formatAssets = (assetsBlock: ContentfulAssets[]): Map<string, Asset
     const asset = {
       url: assetBlock.url,
       description: assetBlock.description,
-      width: assetBlock.width,
-      height: assetBlock.height
+      width: parseInt(assetBlock.width),
+      height: parseInt(assetBlock.height)
     }
 
     assets.set(assetBlock.sys.id, asset);

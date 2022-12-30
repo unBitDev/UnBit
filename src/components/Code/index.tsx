@@ -10,15 +10,16 @@ const Code = ({ code }: CodeProps) => {
   const highligthCode = highligth.highlightAuto(code).value;
 
   return (
-    <pre className={styles.terminal}>
-      <div className={styles.containerButtons}>
-        <div className={styles.buttonClose} />
-        <div className={styles.buttonMinimize} />
-        <div className={styles.buttonMaximize}/>
-      </div>
-      
-      <code dangerouslySetInnerHTML={{__html: highligthCode}} />
-    </pre>
+    <div className={styles.terminal}>
+        <div className={styles.containerButtons}>
+          <span className={`${styles.button} ${styles.buttonClose}`}></span>
+          <span className={`${styles.button} ${styles.buttonMinimize}`}></span>
+          <span className={`${styles.button} ${styles.buttonMaximize}`}></span>
+        </div>
+        <pre className={styles.code}> 
+          <code dangerouslySetInnerHTML={{__html: highligthCode}} />
+        </pre>
+    </div>
   ) 
 }
 

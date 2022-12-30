@@ -12,6 +12,10 @@ module.exports = {
       'primary': '#8C0375',
       'secundary': '#451659',
       'terminal': '#292734',
+      'gray': {
+        '300': '#d1d5db',
+        '400': '#9ca3af'
+      },
       'pink': {
         '400': '#F472B6',
         '500': '#EC4899'
