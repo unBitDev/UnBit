@@ -6,7 +6,7 @@ import styles from '../styles/pages/home.module.css'
 
 const Index = async () => {
   return <div className="mb-24 max-md:mb-2">
-    <Banner backgroundImage="/img/placeholders/bannerDesktop.png" title="Bienvenidos a UnBit" subtitle="Un bit a la vez" /> 
+    <Banner backgroundImage="/img/banner.jpeg" title="Bienvenidos a UnBit" subtitle="Un bit a la vez" sx="text-white" /> 
      <Container>
         <section className="py-10 max-md:py-5">
           <p className="text-4xl max-md:text-xl">UnBit es un blog donde podrás encontrar varios
