@@ -76,7 +76,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   const responseHomeContentful: ContentfulHomeResponse = await response.json();
-  console.log(responseHomeContentful)
   const contentfulHome: ContentfulHome = responseHomeContentful.data.homeCollection.items[0];
 
   const responseHome: HomeResponse =  {

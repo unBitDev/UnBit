@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Container from "../../../src/components/Container";
 import RichText from "../../../src/components/RichText";
 import Banner from "../../../src/elements/Banner";
@@ -10,7 +11,7 @@ type params = {
 
 async function getBlog(id: string) {
   const res = await fetch(`${process.env.HOST}/api/getBlog?id=${id}`);
-  if(!res.ok) throw new Error('Failed to fetch data blog');
+  if(!res.ok) throw new Error("Not found blog");
   return res.json();
 }
 
@@ -22,6 +23,7 @@ const Blog = async ({ params }: params) => {
     blog = await getBlog(slug);
   } catch (e) {
     console.error(e);
+    notFound();
   } 
 
   return(
