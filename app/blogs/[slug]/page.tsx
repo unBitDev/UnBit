@@ -22,7 +22,7 @@ const Blog = async ({ params }: params) => {
     blog = await getBlog(slug);
   } catch (e) {
     console.error(e);
-  } 
+  }
 
   return(
     <>

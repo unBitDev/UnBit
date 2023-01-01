@@ -1,10 +1,12 @@
 export type ContentfulRichtext = {
   json: ContentfulJSONRichText;
-  links: {
-    assets: {
-      block: ContentfulAssets;
-      hyperlink: ContentfulAssets;
-    }
+  links: ContentfulLinks; 
+}
+
+export type ContentfulLinks = {
+  assets: {
+    block: any[];
+    hyperlink: any[];
   }
 }
 
@@ -36,7 +38,7 @@ export type ContentfulSys = {
   publishedVersion: number;
 }
 
-type ContentfulJSONRichText = {
+export type ContentfulJSONRichText = {
   data: any;
   content: ContentfulContentRichtext[];
   nodeType: string;

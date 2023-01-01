@@ -1,4 +1,6 @@
-export const blogValueDefault = {
+import { ResponseBlog } from "../../../src/types/api/blog";
+
+export const blogValueDefault: ResponseBlog = {
   title: "",
   blogBanner: "",
   content: {
@@ -9,7 +11,7 @@ export const blogValueDefault = {
     },
     links: {
       assets: {
-        block: {
+        block: [{
           sys: {
             id: "",
             spaceId: "",
@@ -24,8 +26,8 @@ export const blogValueDefault = {
           width: "",
           height: "",
           filename: ""
-        },
-        hyperlink: {
+        }],
+        hyperlink: [{
           sys: {
             id: "",
             spaceId: "",
@@ -40,7 +42,7 @@ export const blogValueDefault = {
           width: "",
           height: "",
           filename: ""
-        }
+        }]
       }
     }
   },

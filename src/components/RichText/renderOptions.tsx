@@ -4,8 +4,9 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { AssetMap, formatAssets } from './formatAsset';
 import Code from '../Code';
 import Table from '../Table';
+import { ContentfulLinks } from '../../types/shared/contentful';
 
-export const renderOptions = (links: any) => {
+export const renderOptions = (links: ContentfulLinks) => {
   const assetsMap: Map<string, AssetMap> = formatAssets(links.assets.block); 
 
   return {
