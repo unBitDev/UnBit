@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Container from "../../../src/components/Container";
 import RichText from "../../../src/components/RichText";
 import Banner from "../../../src/elements/Banner";
@@ -22,6 +23,7 @@ const Blog = async ({ params }: params) => {
     blog = await getBlog(slug);
   } catch (e) {
     console.error(e);
+    notFound();
   }
 
   return(

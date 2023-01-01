@@ -1,5 +1,3 @@
-'use client';
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { ContentfulLinks } from '../../types/shared/contentful';
 import { renderOptions } from './renderOptions';

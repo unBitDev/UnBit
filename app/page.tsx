@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
 import Banner from "../src/elements/Banner";
@@ -21,6 +22,7 @@ const Home = async () => {
     infoHome = await getInfoHome();
   } catch(e) {
     console.error(e);
+    notFound()
   }
 
   return <div className="mb-24 max-md:mb-2">

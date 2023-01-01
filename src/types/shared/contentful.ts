@@ -5,7 +5,7 @@ export type ContentfulRichtext = {
 
 export type ContentfulLinks = {
   assets: {
-    block: any[];
+    block: ContentfulAssets[];
     hyperlink: any[];
   }
 }

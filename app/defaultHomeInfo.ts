@@ -12,8 +12,38 @@ export const defaultHomeInfo: HomeResponse = {
     },
     links: {
       assets: {
-        block: [],
-        hyperlink: [] 
+        block: [{
+          sys: {
+            id: "",
+            spaceId: "",
+            publishedAt: "",
+            firstPublishedAt: "",
+            enviromentId: "",
+            publishedVersion: 0
+          },
+          title: "",
+          description: "",
+          url: "",
+          width: "",
+          height: "",
+          filename: ""
+        }],
+        hyperlink: [{
+          sys: {
+            id: "",
+            spaceId: "",
+            publishedAt: "",
+            firstPublishedAt: "",
+            enviromentId: "",
+            publishedVersion: 0
+          },
+          title: "",
+          description: "",
+          url: "",
+          width: "",
+          height: "",
+          filename: ""
+        }]
       }
     }
   },
@@ -25,8 +55,38 @@ export const defaultHomeInfo: HomeResponse = {
     },
     links: {
       assets: {
-        block: [],
-        hyperlink: []
+        block: [{
+          sys: {
+            id: "",
+            spaceId: "",
+            publishedAt: "",
+            firstPublishedAt: "",
+            enviromentId: "",
+            publishedVersion: 0
+          },
+          title: "",
+          description: "",
+          url: "",
+          width: "",
+          height: "",
+          filename: ""
+        }],
+        hyperlink: [{
+          sys: {
+            id: "",
+            spaceId: "",
+            publishedAt: "",
+            firstPublishedAt: "",
+            enviromentId: "",
+            publishedVersion: 0
+          },
+          title: "",
+          description: "",
+          url: "",
+          width: "",
+          height: "",
+          filename: ""
+        }]
       }
     }
   }
