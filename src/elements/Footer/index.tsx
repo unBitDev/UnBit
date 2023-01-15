@@ -4,11 +4,10 @@ import { Instagram, Youtube } from 'react-feather';
 const Footer = () => {
   return <footer className="bottom-0 inset-x-0 bg-black p-4 sm:p-6">
     <div className="text-white grid place-items-center">
-      <ul className="grid text-center justify-self-center grid-rows-1 grid-cols-4 gap-8 pt-2 pb-6 sm:gap-6">
-        <li><Link className="text-white" href='/legal-warning'>Legal warning</Link></li>
-        <li><Link className="text-white" href='/privacy-polices'>Privacy polices</Link></li>
-        <li><Link className="text-white" href='/cookie-polices'>Cookie polices</Link></li>
-        <li><Link className="text-white" href='/about'>About Us</Link></li>
+      <ul className="grid text-center justify-self-center grid-rows-1 grid-cols-3 gap-8 pt-2 pb-6 sm:gap-6">
+        <li><Link className="text-white" href='/legal-warning'>Aviso Legal</Link></li>
+        <li><Link className="text-white" href='/privacy-polices'>Politicas de Privacidad</Link></li>
+        <li><Link className="text-white" href='/'>Sobre UnBit</Link></li>
       </ul>
 
       <ul className="grid grid-rows-1 grid-cols-[40px_40px] justify-center pb-6">
