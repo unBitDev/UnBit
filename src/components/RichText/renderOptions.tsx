@@ -68,7 +68,7 @@ export const renderOptions = (links: ContentfulLinks) => {
         node.content.forEach((c: any) => {
           if(c.marks?.length > 0 && c.marks[0].type === 'code') renderNode = <Code code={node.content[0].value}/>; 
           else {
-            renderNode = <p>{children}</p>
+            renderNode = <p className="text-xl max-md:text-lg">{children}</p>
           }
         });
 

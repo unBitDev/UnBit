@@ -11,7 +11,7 @@ type params = {
 
 async function getBlog(id: string) {
   const res = await fetch(`${process.env.HOST}/api/getBlog?id=${id}`);
-  if(!res.ok) throw new Error('Failed to fetch data blog');
+  if(!res.ok) throw new Error("Not found blog");
   return res.json();
 }
 
