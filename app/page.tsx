@@ -18,9 +18,11 @@ const Home = async () => {
             <Image src="/img/placeholders/perfil.jpeg" alt="" width={500} height={500} className={styles.image} />
             <p className="text-xl">
             Hola! Soy <span className="font-bold">Ezequiel</span> me dicen <span className="font-bold italic">"Zetta"</span> un desarollador Frontend y estudiante de Desarollo de Video juegos. Comenze este blog para compartir mis conocimientos y dia al dia como desarrollador con ustedes, trabajo como Frontend Developer hace mas de 4 años y a lo largo de mi corta carrera como dev me encontre con muchos retos que supere y me encantaria contarte como hice eso.
-
+            <br />
+            <br />
             Espero que les guste el sitio y puedan divertirse aprendiendo y leyendo como yo me divierto escribiendo y creando este blog.
-
+            <br />
+            <br />
             Saludo su amigo <span className="font-bold">Zetta!</span>
             </p>
           </div>
