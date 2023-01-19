@@ -8,6 +8,7 @@ const nextConfig = {
   env: {
     CONTENTFUL_TOKEN: process.env.CONTENTFUL_TOKEN,
     CONTENTFUL_ENVIROMENT: process.env.CONTENTFUL_ENVIROMENT,
+    HOST: process.env.HOST
   },
   images: {
     domains: ['images.ctfassets.net']
