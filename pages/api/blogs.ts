@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { ContentfulBlogsResponse, ContentfulBlogs, ResponseBlogs } from "../../src/types/api/blogs";
+import { formatDate } from "../../src/utils/formatDate";
 
 const shortByDate = (items: any[]): any[] => {
 	items.sort(function (a: { publicationDate: string }, b: { publicationDate: string }) {
@@ -69,6 +70,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   })
  
   const blogsResponse: ResponseBlogs[] = shortByDate(blogs);
+
+  blogsResponse.map((blog: ResponseBlogs) => {
+      blog.publicationDate = formatDate(new Date(blog.publicationDate));
+    })
 
   return res.status(200).send(blogsResponse);
 }

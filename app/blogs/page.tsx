@@ -1,7 +1,6 @@
 import Card from '../../src/components/Card';
 import Container from '../../src/components/Container';
 import { ResponseBlogs } from '../../src/types/api/blogs'
-import { formatDate } from '../../src/utils/formatDate';
 
 async function getInfoBlogs() {
   const res = await fetch(`${process.env.HOST}/api/blogs`);
@@ -12,11 +11,7 @@ async function getInfoBlogs() {
 const Blogs = async () => {
   let blogs: ResponseBlogs[] = [];
   try {
-    blogs = await getInfoBlogs();
-
-    blogs.map((blog: ResponseBlogs) => {
-      blog.publicationDate = formatDate(new Date(blog.publicationDate));
-    })
+    blogs = await getInfoBlogs(); 
   } catch (e) {
     console.error(e);
   }
